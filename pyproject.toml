@@ -12,6 +12,7 @@ module = "geci_streamlit"
 requires = [
     "descarga-datos==0.*",
     "pandas-stubs",
+    "plotly==5.*",
     "streamlit"
 ]
 requires-python=">=3.9"
