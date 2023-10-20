@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: islasgeci/geci_streamlit:latest
+    image: islasgeci/mapita_streamlit:latest
     command: bash
     environment:
       BITBUCKET_USERNAME: $BITBUCKET_USERNAME
@@ -12,7 +12,7 @@ services:
     volumes:
       - $PWD:/workdir
   app_develop:
-    image: islasgeci/geci_streamlit:latest
+    image: islasgeci/mapita_streamlit:latest
     container_name: "app-develop-container"
     entrypoint: ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
     ports:
@@ -20,7 +20,7 @@ services:
     volumes:
       - $PWD:/workdir
   app_service:
-    image: islasgeci/geci_streamlit:latest
+    image: islasgeci/mapita_streamlit:latest
     container_name: "core-api-container"
     entrypoint: ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
     ports:
