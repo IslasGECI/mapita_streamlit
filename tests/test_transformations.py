@@ -1,4 +1,4 @@
-import geci_streamlit as dt
+import mapita_streamlit as dt
 
 
 def test_add_offset():
