@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  islasgeci:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: islasgeci/geci_streamlit:latest
+    command: bash
+    environment:
+      BITBUCKET_USERNAME: $BITBUCKET_USERNAME
+      BITBUCKET_PASSWORD: $BITBUCKET_PASSWORD
+    volumes:
+      - $PWD:/workdir
+  app_develop:
+    image: islasgeci/geci_streamlit:latest
+    container_name: "app-develop-container"
+    entrypoint: ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8502:8501"
+    volumes:
+      - $PWD:/workdir
+  app_service:
+    image: islasgeci/geci_streamlit:latest
+    container_name: "core-api-container"
+    entrypoint: ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
