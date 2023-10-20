@@ -14,8 +14,7 @@ all: check coverage mutants
 		tests
 
 module = mapita_streamlit
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
-
+codecov_token = 6d1ac089-a688-45ac-bb5f-2917fdec00d7
 define lint
 	pylint \
         --disable=bad-continuation \
