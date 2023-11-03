@@ -36,5 +36,7 @@ def test_update_trap_lines():
     assert (obtained.is_active == expected.is_active).all()
     assert (obtained.color == expected.color).all()
 
+
+def test_gold():
     obtained = update_trap_lines(original, line_2)
     assert (obtained.is_active == expected_2.is_active).all()
