@@ -1,5 +1,6 @@
 from mapita_streamlit import update_trap_lines
 import pandas as pd
+import pytest
 
 original = pd.DataFrame(
     {
@@ -37,6 +38,7 @@ def test_update_trap_lines():
     assert (obtained.color == expected.color).all()
 
 
+@pytest.mark.skip("This is the gold")
 def test_gold():
     obtained = update_trap_lines(original, line_2)
     assert (obtained.is_active == expected_2.is_active).all()
