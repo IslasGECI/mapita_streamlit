@@ -2,12 +2,8 @@ import pandas as pd
 
 
 def update_trap_lines(original: pd.DataFrame, line):
-    expected = pd.DataFrame(
-        {
-            "is_active": [True, True, False, True],
-        }
-    )
-    return add_color(expected)
+    merged_df = merge_orginal_line(original, line)
+    return add_color(merged_df)
 
 
 def add_color(expected):
