@@ -19,4 +19,6 @@ def add_color(expected):
 
 
 def merge_orginal_line(original: pd.DataFrame, line) -> pd.DataFrame:
-    return original.merge(line, on="line", how="left")
+    merged_df = original.merge(line, on="line", how="left")
+    merged_df["is_active"] = merged_df["is_active_y"].fillna(merged_df["is_active_x"])
+    return merged_df
