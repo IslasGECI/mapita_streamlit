@@ -6,3 +6,8 @@ To run as developer
 ```shell
 docker-compose up -d app_develop
 ```
+
+To run with uploader button
+```shell
+docker-compose up -d app_loader
+```
