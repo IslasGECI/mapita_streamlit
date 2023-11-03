@@ -18,5 +18,5 @@ def add_color(expected):
     )
 
 
-def merge_orginal_line():
+def merge_orginal_line(original: pd.DataFrame, line) -> pd.DataFrame:
     pass
