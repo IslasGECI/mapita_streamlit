@@ -1,4 +1,4 @@
-import mapita_streamlit as dt
+from mapita_streamlit import add_offset, update_trap_lines
 import pandas as pd
 
 
@@ -6,7 +6,7 @@ def test_add_offset():
     augend = 1
     addend = 2
     expected = augend + addend
-    obtained = dt.add_offset(augend, addend)
+    obtained = add_offset(augend, addend)
     assert expected == obtained
 
 
@@ -27,3 +27,6 @@ expected = pd.DataFrame(
         "color": ["Activa", "Activa", "Inactiva", "Activa"],
     }
 )
+
+def test_update_trap_lines():
+    update_trap_lines()
