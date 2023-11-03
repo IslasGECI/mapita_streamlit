@@ -1,4 +1,4 @@
-from mapita_streamlit import update_trap_lines
+from mapita_streamlit import update_trap_lines, merge_orginal_line
 import pandas as pd
 import pytest
 
@@ -42,3 +42,7 @@ def test_update_trap_lines():
 def test_gold():
     obtained = update_trap_lines(original, line_2)
     assert (obtained.is_active == expected_2.is_active).all()
+
+
+def test_silver():
+    merge_orginal_line()
