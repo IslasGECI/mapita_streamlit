@@ -1,6 +1,5 @@
 from mapita_streamlit import update_trap_lines, merge_orginal_line
 import pandas as pd
-import pytest
 
 original = pd.DataFrame(
     {
