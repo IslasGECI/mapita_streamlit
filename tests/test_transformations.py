@@ -30,4 +30,5 @@ expected = pd.DataFrame(
 
 
 def test_update_trap_lines():
-    obtained = update_trap_lines([original], line)
+    obtained = update_trap_lines(original, line)
+    assert (obtained.is_active == expected.is_active).all()
