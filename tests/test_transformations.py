@@ -45,4 +45,4 @@ def test_gold():
 
 
 def test_silver():
-    merge_orginal_line()
+    merge_orginal_line(original, line)
