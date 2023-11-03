@@ -1,13 +1,5 @@
-from mapita_streamlit import add_offset, update_trap_lines
+from mapita_streamlit import update_trap_lines
 import pandas as pd
-
-
-def test_add_offset():
-    augend = 1
-    addend = 2
-    expected = augend + addend
-    obtained = add_offset(augend, addend)
-    assert expected == obtained
 
 
 line = pd.DataFrame({"line": ["linea 1", "cerco"], "is_active": [True, False]})
