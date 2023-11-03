@@ -30,4 +30,4 @@ expected = pd.DataFrame(
 
 
 def test_update_trap_lines():
-    obtained = update_trap_lines(original, line)
+    obtained = update_trap_lines([original], line)
