@@ -33,6 +33,7 @@ expected_2 = pd.DataFrame(
 
 def test_update_trap_lines():
     obtained = update_trap_lines(original, line)
+    print(obtained)
     assert (obtained.is_active == expected.is_active).all()
     assert (obtained.color == expected.color).all()
 
