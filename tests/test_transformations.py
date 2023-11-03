@@ -46,5 +46,5 @@ def test_gold():
 
 def test_silver():
     obtained = merge_orginal_line(original, line)
-    print(obtained)
-    assert obtained.line == expected.line
+    assert (obtained.line == expected.line).all()
+    assert (obtained.is_active == expected.is_active).all()
