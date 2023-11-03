@@ -16,3 +16,7 @@ def add_color(expected):
             lambda is_active: "Activa" if is_active else "Inactiva"
         )
     )
+
+
+def merge_orginal_line():
+    pass
