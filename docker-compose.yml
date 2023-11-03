@@ -19,6 +19,14 @@ services:
       - "8502:8501"
     volumes:
       - $PWD:/workdir
+  app_loader:
+    image: islasgeci/mapita_streamlit:latest
+    container_name: "app-loader-container"
+    entrypoint: ["streamlit", "run", "src/loader.py", "--server.port=8503", "--server.address=0.0.0.0"]
+    ports:
+      - "8503:8503"
+    volumes:
+      - $PWD:/workdir
   app_service:
     image: islasgeci/mapita_streamlit:latest
     container_name: "core-api-container"
