@@ -1,4 +1,4 @@
-from mapita_streamlit import update_trap_lines, merge_orginal_line
+from mapita_streamlit import add_captures, update_trap_lines
 import pandas as pd
 
 original = pd.DataFrame(
@@ -30,7 +30,6 @@ expected_2 = pd.DataFrame(
     }
 )
 
-
 def test_update_trap_lines():
     obtained = update_trap_lines(original, line)
     assert (obtained.is_active == expected.is_active).all()
@@ -39,3 +38,22 @@ def test_update_trap_lines():
 
     obtained = update_trap_lines(original, line_2)
     assert (obtained.is_active == expected_2.is_active).all()
+
+capturas = pd.DataFrame(
+    {
+        "ID": [2, 3],
+        "captures": [True, False]
+    }
+)
+
+expected_captures = pd.DataFrame(
+    {
+        "line": ["linea 1", "linea 1", "cerco", "Linea 2"],
+        "is_active": [False, False, False, True],
+        "ID": [1, 2, 3, 4],
+        "color": ["Inactiva", "Captura", "Inactiva", "Activa"],
+    }
+)
+
+def test_add_cuptures():
+    obtained = add_captures(original, capturas)
