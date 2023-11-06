@@ -55,4 +55,5 @@ expected_captures = pd.DataFrame(
 
 def test_add_captures():
     obtained = add_captures(original, capturas)
+    print(obtained)
     assert (obtained.color == expected_captures.color).all()
