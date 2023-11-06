@@ -30,6 +30,7 @@ expected_2 = pd.DataFrame(
     }
 )
 
+
 def test_update_trap_lines():
     obtained = update_trap_lines(original, line)
     assert (obtained.is_active == expected.is_active).all()
@@ -39,12 +40,8 @@ def test_update_trap_lines():
     obtained = update_trap_lines(original, line_2)
     assert (obtained.is_active == expected_2.is_active).all()
 
-capturas = pd.DataFrame(
-    {
-        "ID": [2, 3],
-        "captures": [True, False]
-    }
-)
+
+capturas = pd.DataFrame({"ID": [2, 3], "captures": [True, False]})
 
 expected_captures = pd.DataFrame(
     {
@@ -55,5 +52,7 @@ expected_captures = pd.DataFrame(
     }
 )
 
-def test_add_cuptures():
+
+def test_add_captures():
     obtained = add_captures(original, capturas)
+    assert (obtained.color == expected_captures.color).all()
