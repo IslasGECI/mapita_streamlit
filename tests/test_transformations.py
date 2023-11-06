@@ -41,7 +41,9 @@ def test_update_trap_lines():
     assert (obtained.is_active == expected_2.is_active).all()
 
 
-capturas = pd.DataFrame({"ID": [2, 3], "captures": [True, False], "color":["Inactiva", "Inactiva"]})
+capturas = pd.DataFrame(
+    {"ID": [2, 3], "captures": [True, False], "color": ["Inactiva", "Inactiva"]}
+)
 
 expected_captures = pd.DataFrame(
     {
