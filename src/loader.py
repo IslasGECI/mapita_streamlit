@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import json
-import plotly.express as px
 
-from mapita_streamlit import add_color, update_trap_lines
+from mapita_streamlit import add_color, plot_trap_status, update_trap_lines
 
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -25,15 +24,7 @@ if uploaded_file is not None:
 
     map_df = update_trap_lines(df, edited_df)
     
-    fig = px.scatter_mapbox(
-        map_df,
-        lat="lat",
-        lon="lon",
-        hover_name="ID",
-        hover_data=["line"],
-        color="color",
-        color_discrete_map={"Inactiva": "black", "Activa": "blue"},
-        height=500,
-    )
-    fig.update_layout(mapbox_style="open-street-map")
+    fig = plot_trap_status(map_df)
     st.plotly_chart(fig)
+
+    st.write("Made with 💖 by GECI")
